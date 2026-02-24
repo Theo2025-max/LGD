@@ -19,10 +19,12 @@ public class Asteroid : MonoBehaviour
     public bool is_20;
 
     [SerializeField] LeanTweenType easetype;
+    public Color drain_color;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         LeanTween.scale(gameObject, new Vector3(2, 2, 1), 0.5f).setEase(easetype);
+        //drain();
     }
 
     // Update is called once per frame
@@ -37,6 +39,11 @@ public class Asteroid : MonoBehaviour
         revolving_meteor.SetActive(true);
         //is_10 = false;
         //is_15 = true;
+    }
+
+    public void drain()
+    {
+        LeanTween.color(gameObject, drain_color, 3f);
     }
 
     public void explode()

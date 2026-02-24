@@ -369,6 +369,8 @@ public class ShuttleMvt : MonoBehaviour
                     drill_particles.Play();
                     drill_sound.Play();
                     CameraShakerHandler.Shake(land_shake);
+                    collision.collider.gameObject.TryGetComponent<Asteroid>(out Asteroid asteroid);
+                    asteroid.drain();
                 }
             }
         }
