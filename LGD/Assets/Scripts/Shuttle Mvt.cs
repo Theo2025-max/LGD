@@ -87,6 +87,10 @@ public class ShuttleMvt : MonoBehaviour
     public GameObject gameplay_ui;
     public ShuttleMvt me;
     public GameObject damage_flash;
+
+    public GameObject gps;
+    public ParticleSystem drill_particles;
+    public AudioSource drill_sound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -208,6 +212,8 @@ public class ShuttleMvt : MonoBehaviour
                             hit.collider.gameObject.TryGetComponent<Asteroid>(out Asteroid asteroid);
                             asteroid.explode();
                             volume.profile.TryGet<ChromaticAberration>(out ChromaticAberration chr_abr2);
+                            drill_particles.Stop();
+                            drill_sound.Stop();
                             if (chr_abr2)
                             {
                                 chr_abr2.intensity.value = 1;
@@ -360,6 +366,8 @@ public class ShuttleMvt : MonoBehaviour
                     landing_sound.Play();
                     print("CONNECTED");
                     landing_particles.Play();
+                    drill_particles.Play();
+                    drill_sound.Play();
                     CameraShakerHandler.Shake(land_shake);
                 }
             }
@@ -425,6 +433,7 @@ public class ShuttleMvt : MonoBehaviour
         gameplay_ui.SetActive(false);
         this.enabled = false;
         me.enabled = false;
+        lost_gps.Stop();
     }
     private void OnBecameInvisible()
     {
@@ -433,6 +442,7 @@ public class ShuttleMvt : MonoBehaviour
             print("WARNING : IN DEEP SPACE");
             Out_of_bounds_time.gameObject.SetActive(true);
             counting_down = true;
+            gps.SetActive(true);
         }
         
     }
@@ -444,6 +454,7 @@ public class ShuttleMvt : MonoBehaviour
         counting_down = false;
         o_o_b_time = 5;
         bounds_return.Play();
+        gps.SetActive(false);
     }
 
     public void add_score(int score_num)

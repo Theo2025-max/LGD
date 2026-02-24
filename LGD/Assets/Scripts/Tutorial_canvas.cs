@@ -61,4 +61,9 @@ public class Tutorial_canvas : MonoBehaviour
         Reset_slides();
         main_menu_stuff.SetActive(false);
     }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
 }

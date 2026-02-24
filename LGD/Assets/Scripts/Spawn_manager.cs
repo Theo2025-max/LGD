@@ -31,7 +31,7 @@ public class Spawn_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             spawn_moving_asteroid_right();
         }
@@ -39,7 +39,7 @@ public class Spawn_manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(spawn_meteor());
-        }
+        }*/
     }
 
     public void asteroid_down()
