@@ -17,6 +17,8 @@ public class Asteroid : MonoBehaviour
     public bool is_10;
     public bool is_15;
     public bool is_20;
+    public bool is_main;
+    public GameObject astr_to_clr_chnange;
 
     [SerializeField] LeanTweenType easetype;
     public Color drain_color;
@@ -43,7 +45,11 @@ public class Asteroid : MonoBehaviour
 
     public void drain()
     {
-        LeanTween.color(gameObject, drain_color, 3f);
+        if (is_main)
+        {
+            LeanTween.color(astr_to_clr_chnange, drain_color, 2f);
+        }
+        
     }
 
     public void explode()

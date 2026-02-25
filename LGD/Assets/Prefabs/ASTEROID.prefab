@@ -678,6 +678,8 @@ MonoBehaviour:
   is_10: 0
   is_15: 0
   is_20: 0
+  is_main: 1
+  astr_to_clr_chnange: {fileID: 5869959317836885644}
   easetype: 24
   drain_color: {r: 0.07169801, g: 0, b: 0, a: 1}
 --- !u!114 &3305489539780789506
