@@ -91,6 +91,7 @@ public class ShuttleMvt : MonoBehaviour
     public GameObject gps;
     public ParticleSystem drill_particles;
     public AudioSource drill_sound;
+    public ShakeData drill_shake;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -371,6 +372,7 @@ public class ShuttleMvt : MonoBehaviour
                     CameraShakerHandler.Shake(land_shake);
                     collision.collider.gameObject.TryGetComponent<Asteroid>(out Asteroid asteroid);
                     asteroid.drain();
+                    CameraShakerHandler.Shake(drill_shake);
                 }
             }
         }
