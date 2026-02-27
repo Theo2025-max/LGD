@@ -19,7 +19,7 @@ public class GameLossCanvas : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        /*if (PlayerPrefs.HasKey("HIGHSCORE"))
+        if (PlayerPrefs.HasKey("HIGHSCORE"))
         {
             PlayerPrefs.SetInt("HIGHSCORE", 0);
         }

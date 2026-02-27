@@ -65,7 +65,26 @@ public class Asteroid : MonoBehaviour
             }
         }
         CameraShakerHandler.Shake(exp_data);
-        Instantiate(shards, transform.position, Quaternion.identity);
+        GameObject shard =  Instantiate(shards, transform.position, Quaternion.identity);
+        Asteroid_shard_spawn assp = shard.GetComponent<Asteroid_shard_spawn>();
+        if (assp)
+        {
+            if (is_10)
+            {
+                assp.reveal_ore(1);
+
+            }
+            if (is_15)
+            {
+                assp.reveal_ore(3);
+            }
+            if (is_20)
+            {
+                assp.reveal_ore(5);
+            }
+            
+        }
+        
         
         GameObject spawner = GameObject.FindGameObjectWithTag("SPAWN");
         if (spawner)
