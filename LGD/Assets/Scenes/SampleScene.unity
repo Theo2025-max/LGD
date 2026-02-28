@@ -78696,7 +78696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "WELCOME TO \n\nA forbiden region deep in space, shrouded in mystery of
-    unkown danger.... and unclaimed treasure\n\n            your mission: \nVENTURE
+    unknown danger.... and unclaimed treasure\n\n            your mission: \nVENTURE
     INTO THE UNKOWN, AND EXTRACT AS MUCH OF THE             AS YOU CAN\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93d81272b4cfc248b59f275a589b296, type: 2}
